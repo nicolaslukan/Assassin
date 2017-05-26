@@ -20,13 +20,13 @@
     <div data-role="page" id="page2">
         <h1 id="playerpagetitle">Player</h1>
         <div data-role="fieldcontain" class="ui-hide-label">
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" value="" placeholder="Please enter your name"/>
+            <label for="playerusername">Username:</label>
+            <input type="text" name="playerusername" id="playerusername" value="" placeholder="Please enter your name"/>
         </div>
 
         <div data-role="fieldcontain" class="ui-hide-label">
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="id#" value="" placeholder="Please enter your ID"/>
+            <label for="playerid">Username:</label>
+            <input type="text" name="playerid" id="playerid" value="" placeholder="Please enter your ID"/>
         </div>
         <a href="#page4" class="ui-btn ui-btn-b">Enter</a>
 
@@ -34,24 +34,38 @@
     </div>
 
     <div data-role="page" id="page3">
-        <h1 id="playerpagetitle">Runner</h1>
+        <h1 id="runnerpagetitle">Runner</h1>
         <div data-role="fieldcontain" class="ui-hide-label">
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" value="" placeholder="Please enter your name"/>
+            <label for="runnerusername">Username:</label>
+            <input type="text" name="runnerusername" id="runnerusername" value="" placeholder="Please enter your name"/>
         </div>
 
         <div data-role="fieldcontain" class="ui-hide-label">
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="id#" value="" placeholder="Please enter your ID"/>
+            <label for="runnerid">Username:</label>
+            <input type="text" name="runnerid" id="runnerid" value="" placeholder="Please enter your ID"/>
         </div>
         <a href="#page5" class="ui-btn ui-btn-b">Enter</a>
 
     </div>
     <div data-role="page" id="page4">
-yio
+
     </div>
     <div data-role="page" id="page5">
-you
+
+        <h1 id="runnerpagetitle2">Runner's page</h1>
+        <form method="post" action="/action_page_post.php">
+            <div class="ui-field-contain">
+                <label for="fullname">Full name:</label>
+                <input type="text" name="fullname" id="fullname">
+
+                <label for="playeremail"> Player E-mail:</label>
+                <input type="email" name="playeremail" id="playeremail">
+            </div>
+        </form>
+        <a id="name" class="ui-btn ui-btn-inline">Add Player</a>
+        <a href="#" class="ui-btn ui-btn-inline">Submit Teams</a>
+
+
     </div>
 
 

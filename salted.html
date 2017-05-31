@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Object Model Example</title>
@@ -61,6 +61,16 @@
             <a href="#page1" data-icon="home">Home</a>
             <h1>Player's Page</h1>
         </div>
+
+
+        <br> <a id="status">Status:</a>
+        <a id="statusoutput"></a> </br>
+        <br> <a id="target">Target:</a>
+        <a id="targetoutput"></a></br>
+        <br> <a for="clear-demo">Description of Kill:</a>
+        <input type="text" name="clear" id="clear-demo" value="" data-clear-btn="true" />
+        </br>
+        <a id="Target Killed" class="ui-btn ui-btn-inline">Press if your target was killed</a>
     </div>
 
     <div data-role="page" id="page5">
@@ -85,12 +95,12 @@
                 <a href="#page5" data-icon="back">Back</a>
                 <a href="#page1" data-icon="home">Home</a>
                 <h1>Runner Control</h1>
+</div>
 
-            </div>
-            <a id="numbteams">Number of teams remaining:</a>
-            <a id="output"></a>
-            <a id="peoplekilled">People killed :</a>
-            <a id="output1"></a>
+            <br> <a id="numbteams">Number of teams remaining:</a>
+            <a id="numbteamsoutput"></a> </br>
+            <br> <a id="peoplekilled">People killed :</a>
+            <a id="killedoutput"></a></br>
             <a id="initiate game" class="ui-btn ui-btn-inline">Initiate Game</a>
            </div>
 

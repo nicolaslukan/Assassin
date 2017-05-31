@@ -18,7 +18,11 @@
     </div>
 
     <div data-role="page" id="page2">
-        <h1 id="playerpagetitle">Player</h1>
+        <div data-role="header">
+            <a href="#page1" data-icon="back">Back</a>
+            <a href="#page1" data-icon="home">Home</a>
+            <h1>Player Login</h1>
+            </div>
         <div data-role="fieldcontain" class="ui-hide-label">
             <label for="playerusername">Username:</label>
             <input type="text" name="playerusername" id="playerusername" value="" placeholder="Please enter your name"/>
@@ -34,7 +38,11 @@
     </div>
 
     <div data-role="page" id="page3">
-        <h1 id="runnerpagetitle">Runner</h1>
+        <div data-role="header">
+            <a href="#page1" data-icon="back">Back</a>
+            <a href="#page1" data-icon="home">Home</a>
+            <h1>Runner Login</h1>
+            </div>
         <div data-role="fieldcontain" class="ui-hide-label">
             <label for="runnerusername">Username:</label>
             <input type="text" name="runnerusername" id="runnerusername" value="" placeholder="Please enter your name"/>
@@ -48,25 +56,45 @@
 
     </div>
     <div data-role="page" id="page4">
-
+        <div data-role="header">
+            <a href="#page2" data-icon="back">Back</a>
+            <a href="#page1" data-icon="home">Home</a>
+            <h1>Player's Page</h1>
+        </div>
     </div>
-    <div data-role="page" id="page5">
 
-        <h1 id="runnerpagetitle2">Runner's page</h1>
+    <div data-role="page" id="page5">
+        <div data-role="header">
+            <a href="#page3" data-icon="back">Back</a>
+            <a href="#page1" data-icon="home">Home</a>
+            <h1>Runner's Page</h1>
+            </div>
+
         <form method="post" action="/action_page_post.php">
             <div class="ui-field-contain">
                 <label for="fullname">Full name:</label>
                 <input type="text" name="fullname" id="fullname">
-
-                <label for="playeremail"> Player E-mail:</label>
-                <input type="email" name="playeremail" id="playeremail">
             </div>
         </form>
         <a id="name" class="ui-btn ui-btn-inline">Add Player</a>
-        <a href="#" class="ui-btn ui-btn-inline">Submit Teams</a>
+        <a href="#page6" class="ui-btn ui-btn-inline">Submit Teams</a>
+        </div>
+
+        <div data-role="page" id="page6">
+            <div data-role="header">
+                <a href="#page5" data-icon="back">Back</a>
+                <a href="#page1" data-icon="home">Home</a>
+                <h1>Runner Control</h1>
+
+            </div>
+            <a id="numbteams">Number of teams remaining:</a>
+            <a id="output"></a>
+            <a id="peoplekilled">People killed :</a>
+            <a id="output1"></a>
+            <a id="initiate game" class="ui-btn ui-btn-inline">Initiate Game</a>
+           </div>
 
 
-    </div>
 
 
 

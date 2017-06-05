@@ -1,16 +1,19 @@
 body {
     margin: auto;
     width: 40%;
+
+
 }
 
 #homeImage{
-    left: 25vw;
-    position: relative;
+    left: 39.5vw;
+position: relative;
 }
 #homepagetitle{
-    font-family:"Comic Sans MS" ;
+
     font-size: xx-large;
-    text-align: center;
+    position: relative;
+left: 42vw;
 
 }
 

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Object Model Example</title>
+    <script src = "stunned.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -10,98 +11,94 @@
 </head>
 <body>
 
-    <div  data-role="page" id="page1">
-        <a id="homepagetitle">ASSASSIN</a>
-        <div id="homeImage"><IMG SRC='images/bomb.png'></div>
-        <a href="#page2" class="ui-btn">Player</a>
-        <a href="#page3" class="ui-btn ui-btn-b">Runner</a>
-    </div>
-
-    <div data-role="page" id="page2">
-        <div data-role="header">
-            <a href="#page1" data-icon="back">Back</a>
-            <h1>Player Login</h1>
-            </div>
-        <div data-role="fieldcontain" class="ui-hide-label">
-            <label for="playerusername">Username:</label>
-            <input type="text" name="playerusername" id="playerusername" value="" placeholder="Please enter your name"/>
-        </div>
-
-        <div data-role="fieldcontain" class="ui-hide-label">
-            <label for="playerid">Username:</label>
-            <input type="text" name="playerid" id="playerid" value="" placeholder="Please enter your ID"/>
-        </div>
-        <a href="#page4" class="ui-btn ui-btn-b">Enter</a>
-
-
-    </div>
-
-    <div data-role="page" id="page3">
-        <div data-role="header">
-            <a href="#page1" data-icon="back">Back</a>
-            <h1>Runner Login</h1>
-            </div>
-        <div data-role="fieldcontain" class="ui-hide-label">
-            <label for="runnerusername">Username:</label>
-            <input type="text" name="runnerusername" id="runnerusername" value="" placeholder="Please enter your name"/>
-        </div>
-
-        <div data-role="fieldcontain" class="ui-hide-label">
-            <label for="runnerid">Username:</label>
-            <input type="text" name="runnerid" id="runnerid" value="" placeholder="Please enter your ID"/>
-        </div>
-        <a href="#page5" class="ui-btn ui-btn-b">Enter</a>
-
-    </div>
-    <div data-role="page" id="page4">
-        <div data-role="header">
-            <a href="#page2" data-icon="back">Back</a>
-            <a href="#page1" data-icon="home">Home</a>
-            <h1>Player's Page</h1>
-        </div>
-
-        <br> <a id="playername">Name:</a>
-        <a id="playernameoutput"></a> </br>
-        <br> <a id="status">Status:</a>
-        <a id="statusoutput"></a> </br>
-        <br> <a id="target">Target:</a>
-        <a id="targetoutput"></a></br>
-        <br> <a for="clear-demo">Description of Kill:</a>
-        <input type="text" name="clear" id="clear-demo" value="" data-clear-btn="true" />
-        </br>
-        <a id="Target Killed" class="ui-btn ui-btn-inline">Press if your target was killed</a>
-    </div>
-
-    <div data-role="page" id="page5">
-        <div data-role="header">
-            <a href="#page3" data-icon="back">Back</a>
-            <a href="#page1" data-icon="home">Home</a>
-            <h1>Runner's Page</h1>
-            </div>
-
-        <form method="post" action="/action_page_post.php">
-            <div class="ui-field-contain">
-                <label for="fullname">Full name:</label>
-                <input type="text" name="fullname" id="fullname">
-            </div>
-        </form>
-        <a id="name" class="ui-btn ui-btn-inline">Add Player</a>
-        <a href="#page6" class="ui-btn ui-btn-inline">Submit Teams</a>
-        </div>
-
-        <div data-role="page" id="page6">
-            <div data-role="header">
-                <a href="#page5" data-icon="back">Back</a>
-                <a href="#page1" data-icon="home">Home</a>
-                <h1>Runner Control</h1>
+<div  data-role="page" id="page1">
+    <a id="homepagetitle">ASSASSIN</a>
+    <div id="homeImage"><IMG SRC='images/bomb.png'></div>
+    <a href="#page2" class="ui-btn" >Player</a>
+    <a href="#page3" class="ui-btn ui-btn-b" >Runner</a>
 </div>
 
-            <br> <a id="numbteams">Number of teams remaining:</a>
-            <a id="numbteamsoutput"></a> </br>
-            <br> <a id="peoplekilled">People killed :</a>
-            <a id="killedoutput"></a></br>
-            <a id="initiate game" class="ui-btn ui-btn-inline">Initiate Game</a>
-           </div>
+<div data-role="page" id="page2">
+    <div data-role="header">
+        <a href="#page1" data-icon="back">Back</a>
+        <a href="#page1" data-icon="home">Home</a>
+        <h1>Player Login</h1>
+    </div>
+    <div data-role="fieldcontain" class="ui-hide-label">
+        <label for="playerusername">Username:</label>
+        <input type="text" name="playerusername" id="playerUsername" value="" placeholder="Please enter your name"/>
+    </div>
+
+    <div data-role="fieldcontain" class="ui-hide-label">
+        <label for="playerid">Username:</label>
+        <input type="text" name="playerid" id="playerID" value="" placeholder="Please enter your ID"/>
+    </div>
+    <a href="#page4" class="ui-btn ui-btn-b" onclick = "playerStatus()">Enter</a>
+
+
+</div>
+
+<div data-role="page" id="page3">
+    <div data-role="header">
+        <a href="#page1" data-icon="back">Back</a>
+        <a href="#page1" data-icon="home">Home</a>
+        <h1>Runner Login</h1>
+    </div>
+    <div data-role="fieldcontain" class="ui-hide-label">
+        <label for="runnerusername">Username:</label>
+        <input type="text" name="runnerusername" id="runnerusername" value="" placeholder="Please enter your name"/>
+    </div>
+
+    <div data-role="fieldcontain" class="ui-hide-label">
+        <label for="runnerid">Username:</label>
+        <input type="text" name="runnerid" id="runnerid" value="" placeholder="Please enter your ID"/>
+    </div>
+    <a href="#page5" class="ui-btn ui-btn-b">Enter</a>
+
+</div>
+<div data-role="page" id="page4">
+    <div data-role="header">
+        <a href="#page2" data-icon="back">Back</a>
+        <a href="#page1" data-icon="home">Home</a>
+        <h1>Player's Page</h1>
+    </div>
+
+
+    <br> <a id="playername">Name:</a>
+    <a id="playernameoutput"></a> </br>
+    <br> <a id="status">Status:</a>
+    <a id="statusoutput"></a> </br>
+    <br> <a id="target">Target:</a>
+    <a id="targetoutput"></a></br>
+    <br> <a for="clear-demo">Description of Kill:</a>
+    <input type="text" name="clear" id="clear-demo" value="" data-clear-btn="true" />
+    </br>
+    <a id="TargetKilled" class="ui-btn ui-btn-inline" onclick = "setDead()">Press if your target was killed</a>
+</div>
+
+<div data-role="page" id="page5">
+    <div data-role="header">
+        <a href="#page3" data-icon="back">Back</a>
+        <a href="#page1" data-icon="home">Home</a>
+        <h1>Runner's Page</h1>
+    </div>
+
+    <form method="post" action="/action_page_post.php">
+        <div data-role="fieldcontain" class="ui-hide-label">
+            <label for="fullname">Username:</label>
+            <input type="text" name="fullname" id="fullname" value="" placeholder="Enter your full name"/>
+        </div>
+        <div data-role="fieldcontain" class="ui-hide-label">
+        <label for="fullid">Username:</label>
+        <input type="text" name="fullid" id="fullid" value="" placeholder="Enter your Id"/>
+    </div>
+    </form>
+    <a id="name" class="ui-btn ui-btn-inline" onclick="newplayer()">Add Player</a>
+    <a href="#page1" class="ui-btn ui-btn-inline" onclick = "start()">Submit Teams</a>
+    <a id="teamoutput"></a>
+</div>
+
+
 
 
 
@@ -113,4 +110,3 @@
 </body>
 
 </html>
-

@@ -86,20 +86,35 @@
     <form method="post" action="/action_page_post.php">
         <div data-role="fieldcontain" class="ui-hide-label">
             <label for="fullname">Username:</label>
-            <input type="text" name="fullname" id="fullname" value="" placeholder="Enter your full name"/>
+            <input type="text" name="fullname" id="fullname" value="" placeholder="Enter player full name"/>
         </div>
         <div data-role="fieldcontain" class="ui-hide-label">
         <label for="fullid">Username:</label>
-        <input type="text" name="fullid" id="fullid" value="" placeholder="Enter your Id"/>
+        <input type="text" name="fullid" id="fullid" value="" placeholder="Enter ID"/>
     </div>
     </form>
-    <a id="name" class="ui-btn ui-btn-inline" onclick="newplayer()">Add Player</a>
+    <a id="name" class="ui-btn ui-btn-inline" onclick= "clear();newplayer();">Add Player</a>
     <a href="#page1" class="ui-btn ui-btn-inline" onclick = "start()">Submit Teams</a>
     <a id="teamoutput"></a>
 </div>
 
 
-
+<div data-role="page" id="page7">
+    <div data-role="header">
+        <a href="#page5" data-icon="back">Back</a>
+        <a href="#page1" data-icon="home">Home</a>
+        <h1>STATUS</h1>
+        <a id="Deadstatus">YOU ARE DEAD!:</a>
+    </div>
+</div>
+    <div data-role="page" id="page8">
+        <div data-role="header">
+            <a href="#page5" data-icon="back">Back</a>
+            <a href="#page1" data-icon="home">Home</a>
+            <h1>STATUS</h1>
+            <a id="Winstatus">YOU WIN!:</a>
+        </div>
+        </div>
 
 
 

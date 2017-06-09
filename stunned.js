@@ -76,9 +76,12 @@ function playerStatus() {
 
 }
 function newplayer() {
+    console.log("newplayer")
 var newplayers = new Person($("#fullname").val(),$("#fullid").val(),false,"0","0");
 data.push(newplayers);
     console.log(data);
+    document.getElementById("fullname").value = "";
+    document.getElementById("fullid").value = "";
 }
 
 

@@ -1,0 +1,179 @@
+
+var loggedIn;
+var data = [];
+var a;
+save(data,"assassinData")
+
+//this will save an array of objects to a local storage
+function save(data, name) {
+    var json = JSON.stringify(data);
+    localStorage.setItem(name, json);
+}
+
+//this retrieves data from local storage
+function retrieve(name) {
+    var text = localStorage.getItem(name);
+    var obj = JSON.parse(text);
+    return obj;
+}
+
+function setDead() {
+    var killer = findPlayerByName(loggedIn.name);
+    var killed = findPlayerByName(loggedIn.target);
+
+    killed.dead = true;
+    killer.target = killed.target;
+    loggedIn.target.dead = true;
+    loggedIn.target = killed.target
+
+    if(killer.name === killer.target){
+        location.replace("html.html#page8");
+    }
+    document.getElementById("targetoutput").innerHTML = killer.target.toUpperCase();
+    save(data, "assassinData")
+
+}
+
+function findPlayerByName(name){
+    data = retrieve("assassinData");
+    for(var i = 0; i<data.length; i++){
+        if(data[i].name === name){
+            return data[i]
+        }
+
+    }
+
+}
+
+function playerStatus() {
+
+    var playerName = document.getElementById("playerUsername").value.toLowerCase();
+    var playerID = document.getElementById("playerID").value;
+    data = retrieve("assassinData");
+    for(var i = 0; i<data.length; i++){
+        if(data[i].name === playerName && data[i].id === playerID){
+
+            if(data[i].dead===false){
+                console.log("THIS SHIT AINT WORKING BOI");
+                console.log("alive", data[i].target);
+                 document.getElementById("statusoutput").innerHTML = "ALIVE";
+                 document.getElementById("targetoutput").innerHTML = data[i].target.toUpperCase();
+                console.log(data[i].name);
+                document.getElementById("playernameoutput").innerHTML = data[i].name.toUpperCase();
+                loggedIn = data[i]
+                a = i;
+
+
+
+            }
+            else {
+
+                location.replace("html.html#page7");
+            }
+
+
+        }
+
+
+    }
+
+}
+
+function newplayer() {
+
+    data = retrieve("assassinData");
+    var newplayers = new Person($("#fullname").val(),$("#fullid").val(),false,"0","0");
+    data.push(newplayers);
+    console.log(data);
+
+    save(data, "assassinData");
+}
+
+
+
+function start() {
+
+
+    data = retrieve("assassinData");
+
+    setUp(data);
+
+
+}
+
+
+
+function setUp(data){
+    var allAssigned = false;
+    while(!allAssigned) {
+        for (var i = 0; i < data.length; i++) {
+            if(i === data.length-1) {
+                data[i].target = data[0].name;
+            }
+            else {
+                data[i].target = data[i + 1].name;
+            }
+
+        }
+
+        var count = 0;
+
+        for (var j = 0; j < data.length; j++){
+            if(data[j].target != "0"){
+                count++;
+            }
+        }
+        if(count === data.length) {
+            allAssigned = true;
+        }
+
+    }
+    for (var i = 0; i < data.length; i++) {
+        console.log(data[i].name, data[i].target);
+    }
+    save(data, "assassinData")
+
+}
+
+
+
+function test(){
+    console.log(p1.dead);
+    console.log("THIS WORKS DAWG");
+
+    console.log(playerUsername);
+
+    console.log(playerID);
+    setUp(data);
+
+}
+
+function login(){
+    for(i=0;i<data.length;i++){
+        if(playerUsername === data[i].name){
+
+        }
+
+    }
+
+
+
+
+}
+
+
+function Person(name,id,status,x,y) {
+    this.name = name.toLowerCase();
+    this.id = id;
+    this.dead = status;
+    this.target = x;
+    this.isTarget = y;
+}
+
+function playerPage(){
+
+
+
+
+
+}
